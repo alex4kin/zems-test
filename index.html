@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>ZEMS.PRO test</title>
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="assets/css/style.css"/>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+	<!-- ///// --> 
+</head>
+<body>
+<!-- Список контактов -->
+  <section class="plato">
+    <div class="contact-list">
+      <div class="wrapper -top">
+        <picture><img src="images/logotype.png" alt="Logo"></picture>
+        <div class="top-title">Книга контактов</div>
+      </div>
+      <div class="wrapper -subtop">
+        <div class="inner">
+          <div class="dropdown">
+            <button class="field dropdown-toggle" type="button" title="Все">
+              ВСЕ
+              <!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+            </button>
+            <div class="dropdown-menu">
+              <div class="dropdown-item active">ВСЕ</div>
+              <div class="dropdown-item">РОДСТВЕННИКИ</div>
+              <div class="dropdown-item">КОЛЛЕГИ</div>
+            </div>
+          </div>
+          <button class="plus-contact" type="button" title="Добавить контакт">
+            <span>добавить <var>контакт</var></span>
+          </button>
+        </div>
+      </div>
+      <div class="wrapper -copy">
+        <div class="inner flex-column">
+          <div class="content-header">
+            <div class="body-row">
+              <div>контакт</div>
+            <div class="middle-col d-flex">
+              <div class="mobile-var">телефон<var>&nbsp;/&nbsp;</var></div>
+              <div>e-mail</div>
+            </div>
+            <div>создан</div>
+            </div>           
+          </div>
+          <div class="content-body flex-column">
+            <div class="body-row editable-row">
+              <div class="uname">
+                <samp>A</samp><span>Айтишник Данила</span>
+              </div>
+              <div class="middle-col d-flex">
+                <div>+79211234567</div>
+                <div>danilamaster@mail.dom</div>
+              </div>
+              <div>03-10-2023</div>
+            </div>
+            <div class="body-row editable-row">
+              <div class="uname">
+                <samp>A</samp><span>Арендодатель Виктория</span>
+              </div>
+              <div class="middle-col d-flex">
+                <div>+79211234567</div>
+                <div>arendavika@mail.dom</div>
+              </div>
+              <div>03-10-2023</div>
+            </div>
+            <div class="body-row editable-row">
+              <div class="uname">
+                <samp>Д</samp><span>Двери Вадим</span>
+              </div>
+              <div class="middle-col d-flex">
+                <div>+79211234567</div>
+                <div>dveri@mail.dom</div>
+              </div>
+              <div>03-10-2023</div>
+            </div>
+            <div class="body-row editable-row">
+              <div class="uname">
+                <samp>Д</samp><span>Доставка Андрей Стоянов</span>
+              </div>
+              <div class="middle-col d-flex">
+                <div>+79211234567</div>
+                <div>delivery@mail.dom</div>
+              </div>
+              <div>03-10-2023</div>
+            </div>
+          </div>
+        </div>
+      </div>     
+    </div>
+  </section>
+<!-- Карточка контакта -->
+  <section class="plato popup-cardedit">
+    <div class="contact-card">
+      <div class="wrapper -top">
+        <div class="uname">
+          <samp>Д</samp><span>Двери Вадим</span>
+        </div>
+        <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+        <picture class="close-icon">
+          <img src="images/times-icon.svg" alt="close">
+        </picture>
+      </div>
+      <div class="wrapper-copy">
+        <div class="inner">
+          <h2>Контакт</h2>
+          <form action="" class="contact-form">
+            <p class="d-flex">
+              <label for="fname">Имя</label>
+              <input class="field" type="text" id="fname" name="fname" value="Двери Вадим" required>
+            </p>
+            <p class="d-flex">
+              <label for="phone">Телефон</label>
+              <input class="field" type="text" id="phone" name="phone" value="+7(921)123-45-67" required>              
+            </p>
+            <p class="d-flex">
+              <label for="email">E-mail</label>
+              <input class="field" type="email" id="email" name="email" value="pochta@domain.ru" required>
+            </p>
+            <div class="d-flex">
+              <label for="category">Категория</label>
+              <div class="dropdown">
+                <button class="field dropdown-toggle" type="button" title="РОДСТВЕННИК" id="category" name="category">
+                  РОДСТВЕННИК
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item">ВСЕ</div>
+                  <div class="dropdown-item active">РОДСТВЕННИК</div>
+                  <div class="dropdown-item">КОЛЛЕГИ</div>
+                </div>
+              </div>              
+            </div>
+            <p class="d-flex flex-row">
+              <label for="date">Создано</label>
+              <span class="field blind" type="text" id="date" name="date">03-10-2023</span>
+            </p>
+            <div class="d-flex submit-zone">
+              <button type="button" class="btn with-loading" title="Сохранить">
+                <img src="images/btn-save.png">
+                <span>сохранить</span>
+              </button>
+              <button popovertarget="p" type="button" class="btn blind" title="Удалить контакт">
+                <img src="images/btn-delete.png">
+                <span>Удалить контакт</span>
+              </button>
+              <div id="p" popover class="popover">
+                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                Контакт успешно удалён
+              </div>
+            </div>           
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Новый контакт -->
+  <section class="plato popup-cardnew">
+    <div class="contact-card">
+      <div class="wrapper -top">
+        <div class="uname">
+          <picture class="icon-in-line">
+            <img src="images/user-icon.png" alt="User">
+          </picture>
+          <span>Добавить контакт</span>
+        </div>
+        <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+        <picture class="close-icon">
+          <img src="images/times-icon.svg" alt="close">
+        </picture>
+      </div>
+      <div class="wrapper-copy">
+        <div class="inner">
+          <h2>Новый контакт</h2>
+          <form action="" class="contact-form">
+            <p class="d-flex error">
+              <label for="fname2">Имя</label>
+              <input class="field" type="text" id="fname2" name="fname2" placeholder="Например, Андрей" required>
+              <mark class="popover">
+                Поле не может быть пустым
+              </mark>
+            </p>
+            <p class="d-flex">
+              <label for="phone-2">Телефон</label>
+              <input class="field" type="tel" id="phone-2" name="phone" placeholder="+7 (___) ___-__-__" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" data-phone-pattern  required>              
+            </p>
+            <p class="d-flex">
+              <label for="email-2">E-mail</label>
+              <input class="field" type="email" id="email-2" name="email" placeholder="Например, pochta@domain.ru" required>
+            </p>
+            <div class="d-flex">
+              <label for="category2">Категория</label>
+              <div class="dropdown">
+                <button class="field dropdown-toggle" type="button" title="РОДСТВЕННИК" id="category2" name="category2" placeholder="Не выбрано">
+                  <span class="p-holder">Не выбрано</span>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="dropdown-item active">Не выбрано</div>
+                  <div class="dropdown-item">Родственник</div>
+                  <div class="dropdown-item">Коллега</div>
+                </div>
+              </div>              
+            </div>
+            <div class="d-flex submit-zone">
+              <button type="button" class="btn with-loading" title="Сохранить">
+                <img src="images/btn-save.png">
+                <span>сохранить</span>
+              </button>
+            </div>           
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/global.js"></script>
+</body>
+</html>

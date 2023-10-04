@@ -1,0 +1,209 @@
+.field {
+  position: relative;
+  @include selector-typo;
+  font-weight: $font-weight-bold;
+  color: $color-txt;
+  @include borderRadius;
+  @include flexbox;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 235px;
+  height: 40px;
+  border: 1px solid $field-border;
+  margin: 0;
+  padding: 0 8px;
+  background-color: $bg-one;
+  cursor: pointer;
+  &:hover, 
+  &:focus,
+  &:focus-visible, 
+  &:active {
+    border-color: $color-txt-sec;
+    outline: none;
+  }
+  &::after {
+    content: "\f0d7";
+    font-family:'FontAwesome';
+    display: block;
+    line-height: 1;
+    font-weight: $font-weight-regular;
+  }
+  @media only screen and(max-width: 424px) {
+    width: 172px;
+  }
+  &.blind {
+    border: none;
+    background-color: transparent;
+    font-weight: $font-weight-regular;
+    font-size: inherit;
+    height: auto;
+    &::after {
+      display: none;
+    }
+    @media only screen and(max-width: 425px) {
+      width: 70%;
+    }
+  }
+}
+.dropdown {
+  position: relative;
+  .dropdown-menu {
+    display: block;
+    max-height: 0;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 8px);
+    bottom: auto;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    opacity: 0;
+    @include transition(.35s, all, ease-in-out);
+    background-color: $bg-one;
+    @include borderRadius;
+    @include boxShadow(0 0 6px rgba(148,181,225,.35));
+    .dropdown-item {
+      @include flexbox;
+      flex-direction: row;
+      justify-content: space-between;
+      @include selector-typo;
+      font-weight: $font-weight-regular;
+      line-height: 40px;
+      background-color: $bg-one;
+      color: $color-txt;
+      text-decoration: none;
+      padding: 0 8px 0 16px;
+      cursor: pointer;
+      &:first-of-type {
+        @include borderRadius(4px 4px 0 0);
+      }
+      &:last-of-type {
+        @include borderRadius(0 0 4px 4px);
+      }
+      &.active {
+        font-weight: $font-weight-bold;
+        &::after {
+          content: "\f00c";
+          font-family:'FontAwesome';
+          display: block;
+          line-height: 40px;
+          font-weight: $font-weight-regular;
+        }
+      }
+      &:hover {
+        background-color: $bg-hover;
+      }
+    }
+  }
+  &.show {
+    & > .field i, 
+    & > .field::after {
+      rotate: 180deg;
+    }
+    .dropdown-menu {
+      max-height: none;
+      height: auto;
+      overflow: visible;
+      opacity: 1;
+    }
+  } 
+} 
+.plus-contact {
+  display: block;
+  width: auto;
+  height: 32px;
+  @include flexbox;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 16px;
+  border: 1px solid $color-txt-sec;
+  @include borderRadius(28px);
+  background-color: $bg-one;
+  font-size: 12px;
+  font-weight: $font-weight-bold;
+  font-variant: small-caps;
+  color: $color-txt-sec;
+  text-decoration: none;
+  cursor: pointer;
+  span {
+    display: block;
+    position: relative;
+    top: -1px;
+    var {
+      font-style: normal;
+      @media only screen and(max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+  &::before {
+    content: "\f067";
+    display: block;
+    font-family: 'FontAwesome';
+    font-weight: $font-weight-regular;
+    line-height: 1;
+    margin-right: 6px;
+  }
+}
+input:hover, 
+input:focus,
+input:focus-visible, 
+input:active {
+  border-color: $color-txt-sec;
+  outline: none;
+}
+.btn {
+  @include flexbox;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  padding: 0 16px;
+  @include borderRadius(4px);
+  background-color: $btn-bg;
+  @include body-typo;
+  font-weight: $font-weight-bold;
+  font-variant: small-caps;
+  border: none;
+  cursor: pointer;
+  img {
+    display: block;
+    margin-right: 6px;
+  }
+  &:hover {
+    background-color: $btn-bg-hover;
+  }
+  &:active {
+    background-color: $btn-bg-active;
+  }
+  &.loading {
+    img {
+      display: none;
+    }
+    &::before {
+      content: url("../../images/loader.svg");
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin-right: 6px;
+      animation: spinner 2s linear infinite;
+    }
+  }
+  &.blind {
+    background-color: transparent;
+    color: $color-txt-sec;
+    font-variant: normal;
+  }
+}
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
